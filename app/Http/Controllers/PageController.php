@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use\App\Page;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -13,7 +13,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        $arr = Page::all();
+        return view("listele")->with('kayitlar',$arr);
     }
 
     /**
@@ -34,7 +35,12 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $page = new Page;
+        $page->Game_title = "New Game";
+        $page->Unique_users = 0;
+        $page->Total_play_count = 0;
+        $page->save();
+        return "Başarılı bir şekilde insert olundu";
     }
 
     /**
@@ -68,7 +74,13 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $page = Page::find($id);
+        $page->Game_id = $id;
+        $page->Game_title = "Update Game";
+        $page->Unique_users = 3;
+        $page->Total_play_count = 3;
+        $page->save();
+        return "Başarılı bir şekilde Update edildi";
     }
 
     /**
@@ -77,8 +89,10 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($baslik)
     {
-        //
+        $page = Page::find($baslik);
+        $page->delete();
+        return "Başarılı bir şekilde silindi";
     }
 }

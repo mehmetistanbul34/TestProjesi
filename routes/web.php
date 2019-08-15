@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('show', 'PageController@index');
+Route::get('add', 'PageController@store');
+Route::get('update/{id}', 'PageController@update');
+Route::get('delete/{baslik}', 'PageController@destroy');
