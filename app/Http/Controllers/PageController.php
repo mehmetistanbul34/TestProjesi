@@ -35,10 +35,14 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
+        $_game_title = $_POST['game_title'];
+        $_unique_users = $_POST['unique_users'];
+        $_total_play_count = $_POST['total_play_count'];         
+
         $page = new Page;
-        $page->Game_title = "New Game";
-        $page->Unique_users = 0;
-        $page->Total_play_count = 0;
+        $page->Game_title = $_game_title;
+        $page->Unique_users = $_unique_users;
+        $page->Total_play_count = $_total_play_count;
         $page->save();
         return "Başarılı bir şekilde insert olundu";
     }
@@ -72,13 +76,19 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $page = Page::find($id);
-        $page->Game_id = $id;
-        $page->Game_title = "Update Game";
-        $page->Unique_users = 3;
-        $page->Total_play_count = 3;
+        $_game_id = $_POST['game_id'];
+        $_game_title = $_POST['game_title'];
+        $_unique_users = $_POST['unique_users'];
+        $_total_play_count = $_POST['total_play_count']; 
+
+
+        $page = Page::find($_game_id);
+        $page->Game_id = $_game_id;
+        $page->Game_title = $_game_title;
+        $page->Unique_users = $_unique_users;
+        $page->Total_play_count = $_total_play_count;
         $page->save();
         return "Başarılı bir şekilde Update edildi";
     }
@@ -89,9 +99,11 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($baslik)
+    public function destroy()
     {
-        $page = Page::find($baslik);
+        $_game_id = $_POST['game_id'];
+
+        $page = Page::find($_game_id);
         $page->delete();
         return "Başarılı bir şekilde silindi";
     }
