@@ -51,20 +51,12 @@
                         <th>Lastname</th>
                     </tr>
                     <tr>
-                        <td>Game_id : </td>
+                        <td>Game İd : </td>
                         <td><input type="int" name="game_id"></td>
                     </tr>
                     <tr>
-                        <td>Game_title : </td>
+                        <td>Game Title : </td>
                         <td><input type="text" name="game_title"></td>
-                    </tr>
-                    <tr>
-                        <td>Unique_users : </td>
-                        <td><input type="int" name="unique_users"></td>
-                    </tr>
-                    <tr>
-                        <td>Total_play_count : </td>
-                        <td><input type="int" name="total_play_count"></td>
                     </tr>
                     <tr>
                         <td></td>

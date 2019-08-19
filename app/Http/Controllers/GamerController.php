@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use\App\Page;
+use\App\GamerModel;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class GamerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        $arr = Page::all();
-        return view("listele")->with('kayitlar',$arr);
+        $arr = GamerModel::all();
+        return view("gamerListele")->with('kayitlar',$arr);
     }
 
     /**
@@ -35,12 +35,12 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $_game_title = $_POST['game_title'];        
+        $_gamer_name = $_POST['gamer_name'];        
 
-        $page = new Page;
-        $page->title = $_game_title;
+        $page = new GamerModel;
+        $page->user_name = $_gamer_name;
         $page->save();
-        return "Başarılı bir şekilde insert olundu";
+        return "Başarılı bir şekilde Gamer insert olundu";
     }
 
     /**
@@ -74,15 +74,15 @@ class PageController extends Controller
      */
     public function update(Request $request)
     {
-        $_game_id = $_POST['game_id'];
-        $_game_title = $_POST['game_title'];
+        $_gamer_id = $_POST['gamer_id'];
+        $_gamer_name = $_POST['gamer_name'];
 
 
-        $page = Page::find($_game_id);
-        $page->id = $_game_id;
-        $page->title = $_game_title;
+        $page = GamerModel::find($_gamer_id);
+        $page->id = $_gamer_id;
+        $page->user_name = $_gamer_name;
         $page->save();
-        return "Başarılı bir şekilde Update edildi";
+        return "Gamer başarılı bir şekilde Update edildi";
     }
 
     /**
@@ -93,9 +93,9 @@ class PageController extends Controller
      */
     public function destroy()
     {
-        $_game_id = $_POST['game_id'];
+        $_gamer_id = $_POST['gamer_id'];
 
-        $page = Page::find($_game_id);
+        $page = GamerModel::find($_gamer_id);
         $page->delete();
         return "Başarılı bir şekilde silindi";
     }

@@ -48,13 +48,15 @@
             <?php 
                 echo "<table border='1' width='500px' height='200px'>";
                 echo "<tr>";
-                echo "<th>Game İd</th>";
-                echo "<th>Game Title</th>";
+                echo "<th>User İd</th>";
+                echo "<th>Score</th>";
+                echo "<th>Rank</th>";
                 echo "</tr>";
                 for($i=0;$i<count($kayitlar);$i++){
                     echo "<tr>";
-                    echo "<td>",$kayitlar[$i]->id,"</td>";
-                    echo "<td>",$kayitlar[$i]->title,"</td>";
+                    echo "<td>",$kayitlar[$i]->User_id,"</td>";
+                    echo "<td>",$kayitlar[$i]->Score,"</td>";
+                    echo "<td>",$kayitlar[$i]->Rank,"</td>";
                     echo "</tr>";
                 }
                 echo "</table>";

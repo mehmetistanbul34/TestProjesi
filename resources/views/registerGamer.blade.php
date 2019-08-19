@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Delete</title>
+    <title>Register</title>
 
     <style>
     .kutu{
@@ -22,28 +22,28 @@
         margin-top:150px;
         padding: 35px;
         border-radius: 30px;
-        box-shadow: 5px 15px 20px red;
+        box-shadow: 5px 15px 20px green;
     }
     button,input{
         background: whitesmoke;
         border-radius: 5px;
-        box-shadow: 2px 2px 3px red;
+        box-shadow: 2px 2px 3px green;
         outline: none;
         padding:2px;
     }
     button:hover,input:focus{
         background: whitesmoke;
         border-radius: 5px;
-        box-shadow: 2px 2px 3px red;
+        box-shadow: 2px 2px 3px green;
         outline: none;
         padding:2px;
     }
     </style>
 </head>
 <body>
-    <div class="kutu">
+<div class="kutu">
         <div class="row">
-            <form action="{{ route('delete')}}" method="post">
+            <form action="{{ route('ekleGamer')}}" method="post">
                 {{ csrf_field() }}
                 <table>
                     <tr>
@@ -51,13 +51,13 @@
                         <th>Lastname</th>
                     </tr>
                     <tr>
-                        <td>Silinecek Game İd : </td>
-                        <td><input type="int" name="game_id"></td>
+                        <td>Gamer Name : </td>
+                        <td><input type="text" name="gamer_name"></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td><button type="submit">Send</button></td>
-                    </tr>   
+                    </tr>
                 </table>
             </form>
             <a href="http://localhost:8000/Anasayfa"> <button>Anasayfa</button> </a>

@@ -12,8 +12,8 @@
             background: whitesmoke;
             margin-left: 350px;
             margin-top:0px;
-            width:500px;
-            height:350px;
+            width:auto;
+            height:auto;
             padding: 15px;
             border-radius: 30px;
         }
@@ -48,13 +48,13 @@
             <?php 
                 echo "<table border='1' width='500px' height='200px'>";
                 echo "<tr>";
-                echo "<th>Game İd</th>";
-                echo "<th>Game Title</th>";
+                echo "<th>Gamer İd</th>";
+                echo "<th>Gamer Name</th>";
                 echo "</tr>";
                 for($i=0;$i<count($kayitlar);$i++){
                     echo "<tr>";
                     echo "<td>",$kayitlar[$i]->id,"</td>";
-                    echo "<td>",$kayitlar[$i]->title,"</td>";
+                    echo "<td>",$kayitlar[$i]->user_name,"</td>";
                     echo "</tr>";
                 }
                 echo "</table>";

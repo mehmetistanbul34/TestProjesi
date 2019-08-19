@@ -45,10 +45,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('mysql://root@localhost:3306/APIdb?charset=UTF-8'),
+            'url' => env('mysql://root@localhost:3306/seeder_db?charset=UTF-8'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'APIdb'),
+            'database' => env('DB_DATABASE', 'seeder_db'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', '07104420Gyte'),
             'unix_socket' => env('DB_SOCKET', ''),

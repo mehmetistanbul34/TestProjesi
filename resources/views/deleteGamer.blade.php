@@ -43,7 +43,7 @@
 <body>
     <div class="kutu">
         <div class="row">
-            <form action="{{ route('delete')}}" method="post">
+            <form action="{{ route('deleteGamer')}}" method="post">
                 {{ csrf_field() }}
                 <table>
                     <tr>
@@ -51,8 +51,8 @@
                         <th>Lastname</th>
                     </tr>
                     <tr>
-                        <td>Silinecek Game İd : </td>
-                        <td><input type="int" name="game_id"></td>
+                        <td>Silinecek Gamer İd : </td>
+                        <td><input type="int" name="gamer_id"></td>
                     </tr>
                     <tr>
                         <td></td>
